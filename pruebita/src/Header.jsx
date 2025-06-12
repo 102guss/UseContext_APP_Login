@@ -14,7 +14,7 @@ export default function Header () {
           </>
           )
         : (
-          <p>No has iniciado sesión</p>
+          <p>Página de inicio</p>
           )}
     </header>
   )
