@@ -6,7 +6,7 @@ const UserContext = createContext()
 export default function UserProvider ({ children }) {
   const [user, setUser] = useState(null)
 
-  const login = () => setUser({ name: 'Daniel' })
+  const login = (username) => setUser({ name: username || 'Daniel' })
   const logout = () => setUser(null)
 
   return (
