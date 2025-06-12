@@ -1,6 +1,7 @@
 // Login.jsx
 import { useState } from 'react'
 import { useUser } from './UserContext'
+import './Login.css'
 
 export default function Login () {
   const { user, login } = useUser()
@@ -24,7 +25,7 @@ export default function Login () {
       setError('Por favor, completa todos los campos')
       return
     }
-    
+
     // Aquí podrías validar las credenciales
     // Por ahora simplemente llamamos a login con el nombre de usuario
     login(formData.username)
@@ -34,48 +35,42 @@ export default function Login () {
   if (user) return <p>Ya has iniciado sesión como {user.name}</p>
 
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px' }}>
+    <div className='login-container'>
       <h2>Iniciar Sesión</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
+      {error && <p className='error-message'>{error}</p>}
+
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="username" style={{ display: 'block', marginBottom: '5px' }}>
+        <div className='form-group'>
+          <label htmlFor='username' className='form-label'>
             Usuario:
           </label>
           <input
-            type="text"
-            id="username"
-            name="username"
+            type='text'
+            id='username'
+            name='username'
             value={formData.username}
             onChange={handleChange}
-            style={{ width: '100%', padding: '8px' }}
+            className='form-input'
           />
         </div>
-        
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="password" style={{ display: 'block', marginBottom: '5px' }}>
+
+        <div className='form-group'>
+          <label htmlFor='password' className='form-label'>
             Contraseña:
           </label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type='password'
+            id='password'
+            name='password'
             value={formData.password}
             onChange={handleChange}
-            style={{ width: '100%', padding: '8px' }}
+            className='form-input'
           />
         </div>
-        
-        <button 
-          type="submit"
-          style={{ 
-            padding: '10px 15px', 
-            backgroundColor: '#4CAF50', 
-            color: 'white', 
-            border: 'none',
-            cursor: 'pointer'
-          }}
+
+        <button
+          type='submit'
+          className='submit-button'
         >
           Iniciar sesión
         </button>
