@@ -3,7 +3,7 @@ import { createContext, useState, useContext } from 'react'
 
 const UserContext = createContext()
 
-export function UserProvider ({ children }) {
+export default function UserProvider ({ children }) {
   const [user, setUser] = useState(null)
 
   const login = () => setUser({ name: 'Daniel' })

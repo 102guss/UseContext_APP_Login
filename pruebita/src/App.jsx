@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ListaArticulos from './pruebita'
 import Header from './Header'
-import { UserProvider } from './UserContext'
+import UserProvider from './UserContext'
 import Login from './Login'
 import ContenidoPrivado from './ContenidoPrivado'
 import './App.css'

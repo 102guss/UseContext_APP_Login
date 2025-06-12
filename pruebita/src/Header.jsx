@@ -5,7 +5,7 @@ export default function Header () {
   const { user, logout } = useUser()
 
   return (
-    <header>
+    <header style={{ border: '2px solid black' }}>
       {user
         ? (
           <>
